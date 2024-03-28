@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
+    <style>
+        /* Estilos para el navbar */
+        .navbar {
+            position: fixed; /* Fija el navbar en la parte superior */
+            top: 0; /* Lo fija en la parte superior de la pantalla */
+            width: 100%; /* Ancho completo */
+            background-color: #333; /* Color de fondo */
+            color: #fff; /* Color de texto */
+            padding: 10px 0; /* Espaciado interior */
+            text-align: center; /* Alineación del texto */
+        }
+
+        /* Estilos para el contenedor debajo del navbar */
+        .container {
+            margin-top: 60px; /* Espacio para el navbar fijo */
+            padding: 20px; /* Espaciado interior */
+            text-align: center; /* Alineación del contenido */
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style='z-index: 1000;'>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          <button id="MenuPrincipal" class="btn btn-primary" style="margin: 10px; padding: 15px 60px;">Home</button>
+          </li>
+          <li class="nav-item">
+            <button id="SobreMi" class="btn btn-primary" style="margin: 10px; padding: 15px 60px;">About</button>
+          </li>
+          <li class="nav-item">
+            <button id="Contacto" class="btn btn-primary" style="margin: 10px; padding: 15px 60px;">Contact</button>
+          </li>
+    </nav>
+
+    
+
+    <script>
+      // Espera a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function() {
+        // Obtén el botón
+        var boton = document.getElementById("MenuPrincipal");
+
+        // Agrega un event listener para el clic en el botón
+        boton.addEventListener("click", function() {
+          // Redirige a la página de contacto
+          window.location.href = "http://127.0.0.1:3000/";
+        });
+      });
+    </script>
+
+    <script>
+      // Espera a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function() {
+        // Obtén el botón
+        var boton = document.getElementById("SobreMi");
+
+        // Agrega un event listener para el clic en el botón
+        boton.addEventListener("click", function() {
+          // Redirige a la página de contacto
+          window.location.href = "http://127.0.0.1:3000/about";
+        });
+      });
+    </script>
+
+    <script>
+      // Espera a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function() {
+        // Obtén el botón
+        var boton = document.getElementById("Contacto");
+
+        // Agrega un event listener para el clic en el botón
+        boton.addEventListener("click", function() {
+          // Redirige a la página de contacto
+          window.location.href = "http://127.0.0.1:3000/contact";
+        });
+      });
+    </script>
+
+    
+
+  
+
+
+
+
+    <div style="width: 100%; min-height: 100vh; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center; flex-direction: column; z-index:-1">
+      <%= yield %>
+    </div>
+
+ 
+
+
+
+
+
+
+
+
+    <footer class="footer text-center text-white" style="background-color: #0a4275; heigh:5vh; padding: 0px;">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: CTA -->
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <a class="text-white" href = 'https://www.uandes.cl/'><span style="font-size: 20px;">@lukaswolffcasanova</a>
+          </p>
+        </section>
+        <!-- Section: CTA -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            // Mostrar el footer cuando el usuario haya desplazado 500px
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById("footer").style.display = "block";
+            } else {
+                document.getElementById("footer").style.display = "none";
+            }
+        }
+    </script>
+  </body>
+</html>
